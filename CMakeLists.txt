@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.14.0)
 set(CMAKE_OSX_DEPLOYMENT_TARGET 10.13 CACHE STRING "")
 
-set(vst3sdk_SOURCE_DIR "/Users/ryohey/vst3sdk")
-if(NOT vst3sdk_SOURCE_DIR)
-    message(FATAL_ERROR "Path to VST3 SDK is empty!")
-endif()
-
 project(MIDIOutputExample
     # This is your plug-in version number. Change it here only.
     # Version number symbols usable in C++ can be found in
@@ -13,6 +8,8 @@ project(MIDIOutputExample
     VERSION 1.0.0.0 
     DESCRIPTION "MIDIOutputExample VST 3 Plug-in"
 )
+
+set(vst3sdk_SOURCE_DIR ${PROJECT_SOURCE_DIR}/vst3sdk)
 
 set(SMTG_VSTGUI_ROOT "${vst3sdk_SOURCE_DIR}")
 
